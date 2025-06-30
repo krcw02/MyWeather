@@ -1,0 +1,20 @@
+<thead class="table-header">
+  <tr>
+    <th class="text-center d-none d-md-table-cell">#</th>
+    <th>Nazwa</th>
+    <th>Temperatura [°C]</th>
+    <th>Wiatr [km/h]</th>
+    <th></th>
+    <th></th>
+  </tr>
+</thead>
+<tbody class="scrollable-tbody">
+  <tr
+    app-city-row
+    *ngFor="let city of cities; let i = index"
+    [city]="city"
+    [index]="i"
+    (rowClicked)="onRowClick(city)"
+    (deleteCity)="onDeleteCity(city.name)"
+  ></tr>
+</tbody>

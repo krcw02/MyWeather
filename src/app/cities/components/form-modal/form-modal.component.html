@@ -1,0 +1,75 @@
+<div
+  class="modal fade"
+  id="staticBackdrop"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <form #cityForm="ngForm">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Dodaj miasto</h5>
+          <button
+            type="button"
+            class="btn-close btn-close-white"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+            (click)="onClose(cityForm)"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="cityName" class="form-label">Nazwa miasta</label>
+            <input
+              type="text"
+              id="cityName"
+              name="cityName"
+              class="form-control"
+              [(ngModel)]="cityName"
+              required
+              [disabled]="loading || cityFound"
+            />
+          </div>
+          <div *ngIf="error" class="alert alert-danger py-2 px-3 mt-2 mb-0">
+            {{ error }}
+          </div>
+          <div *ngIf="cityFound" class="alert alert-success py-2 px-3 mt-2 mb-0">
+            Miasto zostało znalezione! Możesz dodać do listy.
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+            (click)="onClose(cityForm)"
+            [disabled]="loading"
+          >
+            Anuluj
+          </button>
+          <button
+            *ngIf="!cityFound"
+            type="button"
+            class="btn btn-primary"
+            [disabled]="!cityForm.valid || loading"
+            (click)="checkCity(cityForm)"
+          >
+            <span *ngIf="loading" class="spinner-border spinner-border-sm me-2"></span>
+            Sprawdź
+          </button>
+          <button
+            *ngIf="cityFound"
+            type="button"
+            data-bs-dismiss="modal"
+            class="btn btn-success"
+            (click)="onSave(cityForm)"
+          >
+            OK
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<!-- Panel Nawigacji Bootstrap -->
+<div
+  class="d-flex flex-column flex-shrink-0 p-3 bg-dark sidebar"
+  [class.collapsed]="!isOpen"
+>
+  <!-- Logo -->
+  <a
+    routerLink="/"
+    routerLinkActive="active"
+    class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
+  >
+    <img src="assets/logo.webp" alt="Logo" class="me-2 logo" width="35" />
+    <span class="fs-4 fw-bold text-gradient" *ngIf="isOpen">MyWeather</span>
+  </a>
+  <button
+    class="btn bg-transparent me-2 sidebar-toggle"
+    (click)="onToggleSidebar()"
+    [ngClass]="{ 'sidebar-open': !isOpen }"
+  >
+    <i class="fa" [ngClass]="{ 'fa-bars': !isOpen, 'fa-times': isOpen }"></i>
+  </button>
+  <div class="mb-5"></div>
+
+  <!-- Sekcja Menu 1 -->
+  <div class="sectionTitle fs-6 text">Home</div>
+
+  <ul class="nav nav-pills flex-column mb-auto">
+    <li class="nav-item">
+      <a
+        routerLink="/cities"
+        routerLinkActive="active"
+        class="nav-link my-2 active"
+      >
+        <i class="fa-solid fa-city me-3"></i>
+        <span *ngIf="isOpen">Pogoda dla miast</span>
+      </a>
+    </li>
+    <li>
+      <a routerLink="/about" routerLinkActive="active" class="nav-link my-2">
+        <i class="fa-solid fa-circle-info me-3"></i>
+        <span *ngIf="isOpen">O aplikacji</span>
+      </a>
+    </li>
+  </ul>
+</div>

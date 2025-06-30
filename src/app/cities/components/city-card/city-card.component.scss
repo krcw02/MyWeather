@@ -1,0 +1,134 @@
+.further-text {
+    color: #898585;
+    font-size: 14px;
+}
+
+.primary-text {
+    color: #D7D7D7;
+    font-size: 16px;
+}
+
+/* Stylizacja dla awatarów */
+.avatars-cell {
+    text-align: center;
+    /* Wyrównanie awatarów na środku */
+    vertical-align: top;
+    /* Wyrównanie do góry wiersza */
+    padding: 4px;
+    align-items: center;
+    align-content: center;
+
+    .avatars {
+        display: flex;
+        gap: 8px;
+
+        align-items: center;
+        align-content: center;
+    }
+
+    .avatar {
+        width: 30px;
+        height: 30px;
+        background-color: #f35759;
+        /* Kolor tła awatara */
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #000;
+        font-size: 16px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+    }
+
+    .avatar:nth-child(1) {
+        margin-right: -22px;
+        border: solid 1px #222222;
+        z-index: 10;
+    }
+
+    .avatar:last-child {
+        margin-right: 0;
+        border: solid 1px #222222;
+        z-index: 0;
+    }
+
+
+
+
+}
+
+.warnings {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: center;
+
+    .warning {
+        width: 30px;
+        height: 30px;
+        background-color: #000;
+        /* Kolor tła awatara */
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #F0AF54;
+        font-size: 30px;
+    }
+}
+
+
+/* Stylizacja dla imion kierowców */
+.names-cell {
+    text-align: left;
+    /* Wyrównanie tekstu do lewej */
+    vertical-align: top;
+    /* Wyrównanie do góry wiersza */
+    padding: 4px;
+    align-items: center;
+    align-content: center;
+
+    .names {
+        display: flex;
+        flex-direction: column;
+        /* Imiona jeden pod drugim */
+        gap: 4px;
+        /* Odstęp między imionami */
+        color: #adadad;
+        /* Kolor tekstu */
+        font-size: 14px;
+        /* Rozmiar czcionki */
+        line-height: 1.5;
+        /* Ustawienie odstępów między liniami */
+    }
+}
+
+.drivers {
+    display: flex;
+    align-items: flex-start;
+    /* Wyrównanie avatarów i tekstu do góry */
+    min-height: 32px;
+    /* Minimalna wysokość dla zapewnienia spójności */
+
+
+
+    .names {
+        margin-left: 12px;
+        /* Odstęp między avatarami a tekstem */
+        display: flex;
+        flex-direction: column;
+        /* Imiona w kolumnie */
+        justify-content: flex-start;
+        /* Wyrównanie do góry */
+        line-height: 1.5;
+        /* Dodanie odstępu między imionami */
+        min-height: 32px;
+        /* Minimalna wysokość odpowiadająca awatarowi */
+    }
+}

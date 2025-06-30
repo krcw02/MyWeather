@@ -1,0 +1,278 @@
+/* 1. Import funkcji Bootstrap */
+@import "../node_modules/bootstrap/scss/functions";
+
+/* 2. Kolory główne */
+$primary: #F35759; // Główny kolor, kolor logo
+$secondary: #413c3c; // Lżejszy od głównego koloru
+$tertiary: #423939; // Kolor pomocniczy, np. do przycisków
+$active: #F35759; // Kolor aktywnego elementu
+$body-bg: #171718; // Tło strony (za kafelkami)
+$card-bg: #1C1C1D; // Tło kafelków
+$tag-bg: #3F3F3F; // Tło pastylek/tagów
+$body-color: #FFFFFF; // Jasny kolor czcionek
+$text-muted: #ADADAD; // Ciemniejszy kolor do mniej ważnych rzeczy
+$caption-color: #5F5F5F; // Najciemniejszy kolor tekstu (np. legendy)
+
+
+/* 3. Statusy */
+$success: #00AE0C; // Zielony (sukces)
+$warning: #F0AF54; // Żółty (ostrzeżenie)
+$danger: #CD3648; // Czerwony (błąd)
+
+/* 4. Czcionki */
+$font-family-base: 'DM Sans', sans-serif;
+$font-size-base: 1rem; // Domyślny rozmiar czcionki
+$line-height-base: 1.5;
+
+/* Rozmiary czcionek */
+$font-sizes: (
+    'small': 16px,
+    'normal': 18px,
+    'medium': 20px,
+    'large': 22px,
+    'extra-large': 24px
+);
+
+/* Grubości czcionek */
+$font-weights: (
+    'thin': 100,
+    'extra-light': 200,
+    'medium': 500,
+    'bold': 700
+);
+
+// add color for table stripe
+$table-accent-bg: $card-bg;
+$table-striped-bg: #212122 !important;
+// none border
+$table-border-color: transparent !important;
+//hover color
+$table-hover-bg: #262627 !important;
+$card-border-color: #343434 !important;
+$card-cap-color: #676767;
+$card-border-width: 3px;
+
+
+
+
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+/* 6. Dodatkowe Globalne Style */
+body {
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    background-color: $body-bg;
+    color: $body-color;
+}
+
+/* Kafelki (karty) */
+.card {
+    background-color: $card-bg;
+    border: none;
+    border-radius: 8px;
+
+}
+
+.sidebar {
+    height: 100vh;
+    background-color: $card-bg;
+    color: $body-color;
+    transition: width 0.3s ease-in-out;
+    padding: 15px;
+}
+
+/* Tagi i pastylki */
+.tag {
+    background-color: $tag-bg;
+    color: $body-color;
+    border-radius: 12px;
+    padding: 0.25rem 0.75rem;
+    font-size: map-get($font-sizes, 'small');
+}
+
+/* Statusy */
+.text-success {
+    color: $success !important;
+}
+
+.text-warning {
+    color: $warning !important;
+}
+
+.text-danger {
+    color: $danger !important;
+}
+
+/* Tytuły */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: map-get($font-weights, 'bold');
+}
+
+/* Legenda i mniej ważny tekst */
+.caption {
+    color: $caption-color;
+    font-size: map-get($font-sizes, 'small');
+}
+
+/* Przyciski */
+.btn-primary {
+    background-color: $primary;
+    border-color: $primary;
+
+    &:hover {
+        background-color: darken($primary, 10%);
+        border-color: darken($primary, 10%);
+    }
+}
+
+.btn-secondary {
+    background-color: $secondary;
+    border-color: $secondary;
+
+    &:hover {
+        background-color: darken($secondary, 10%);
+        border-color: darken($secondary, 10%);
+    }
+}
+
+/* Linki */
+a {
+    color: $primary;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+
+
+/* Stylowanie kafelków (kart) */
+.card,
+.tile {
+    background-color: $card-bg;
+    border-radius: 10px;
+
+    -webkit-box-shadow: 6px 4px 10px 0px rgba(16, 16, 16, 1);
+    -moz-box-shadow: 6px 4px 10px 0px rgba(16, 16, 16, 1);
+    box-shadow: 6px 4px 10px 0px rgba(16, 16, 16, 1);
+}
+
+hr {
+    border-top: 3px solid #343434;
+    margin: -5px 0 1px 0;
+}
+
+$custom-table-bg: #1c1c1d;
+/* Tło tabeli */
+$custom-table-striped-bg: #212122;
+/* Tło wierszy paskowanych */
+$custom-table-hover-bg: #333333;
+/* Tło podczas hover */
+$custom-table-text-color: #ffffff;
+
+/* Globalne kolory tabeli */
+.table {
+    background-color: #1c1c1d !important;
+    color: #ffffff !important;
+
+    thead {
+        background-color: #1c1c1d !important;
+        color: #ffffff !important;
+    }
+
+    tbody tr:nth-of-type(odd) {
+        background-color: #1c1c1d !important;
+    }
+
+    tbody tr:nth-of-type(even) {
+        background-color: #212122 !important;
+    }
+
+    tbody tr:hover {
+        background-color: #333333 !important;
+    }
+}
+
+
+.avatar {
+    border-radius: 100%;
+    background-color: #F05458;
+    padding: 5px;
+    font-size: .9rem;
+    color: black;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+// scrollbar
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #696969;
+    border: 0px none #ffffff;
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #cccccc;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: #adadad98;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+    border: 0px none #ffffff;
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-track:hover {
+    background: #666666;
+}
+
+::-webkit-scrollbar-track:active {
+    background: #333333;
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+
+@media (min-width: 770px){
+.p-md { padding: 1em; }
+.p-x-md { padding: 0 1em; }
+.p-y-md { padding: 1em 0; }
+.p-t-md { padding-top: 1em; }
+.p-r-md { padding-right: 1em; }
+.p-b-md { padding-bottom: 1em; }
+.p-l-md { padding-left: 1em; }
+.m-md { margin: 1em; }
+.m-x-md { margin: 0 1em; }
+.m-y-md { margin: 1em 0 ; }
+.m-t-md { margin-top: 1em; }
+.m-r-md { margin-right: 1em; }
+.m-b-md { margin-bottom: 1em; }
+.m-l-md { margin-left: 1em; }
+}

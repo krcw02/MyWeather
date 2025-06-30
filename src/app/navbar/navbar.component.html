@@ -1,0 +1,24 @@
+<nav
+  class="navbar navbar-expand bg-dark text-white fixed-top custom-navbar"
+  [class.sidebar-open]="isSidebarOpen"
+>
+  <div
+    class="container-fluid d-flex justify-content-between align-items-center"
+  >
+    <div>
+      <button class="btn bg-transparent me-2" (click)="onToggleSidebar()">
+        <i
+          class="fa"
+          [ngClass]="{ 'fa-bars': !isSidebarOpen, 'fa-times': isSidebarOpen }"
+        ></i>
+      </button>
+     
+    </div>
+
+    <div class="d-flex align-items-center">
+      
+      
+  
+    </div>
+  </div>
+</nav>

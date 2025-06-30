@@ -1,0 +1,91 @@
+<div class="d-flex">
+  <div class="cities-container card m-md mt-2 w-100">
+    <h6 class="fs-5 text p-4 card-title card-header bg-transparent">
+      O aplikacji MyWeather
+    </h6>
+    <div class="card-body">
+      <div class="about-content text-muted">
+        <h4 class="mt-4">Najważniejsze funkcje aplikacji:</h4>
+        <ul>
+          <li>
+            <strong>Wyświetlanie pogody dla wielu miast</strong> – na głównym
+            ekranie prezentowana jest tabela z aktualną temperaturą, prędkością
+            wiatru oraz ikoną pogody dla wybranych miast.
+          </li>
+          <li>
+            <strong>Dodawanie nowych miast</strong> – użytkownik może dodać
+            dowolne miasto do listy, korzystając z wygodnego modala. Przed
+            dodaniem aplikacja sprawdza, czy miasto istnieje w bazie
+            OpenWeatherMap.
+          </li>
+          <li>
+            <strong>Usuwanie miast</strong> – niepotrzebne miasta można łatwo
+            usunąć z listy jednym kliknięciem.
+          </li>
+          <li>
+            <strong>Prezentacja szczegółów pogody</strong> – kliknięcie na
+            miasto przenosi do podstrony z rozbudowanymi informacjami pogodowymi
+            (m.in. ciśnienie, wilgotność, opis warunków, szczegółowa ikona).
+          </li>
+          <li>
+            <strong>Responsywny i atrakcyjny interfejs</strong> – aplikacja
+            automatycznie dostosowuje się do rozmiaru ekranu, a przejrzysty
+            design ułatwia korzystanie na każdym urządzeniu.
+          </li>
+          <li>
+            <strong>Trwałość danych</strong> – lista miast przechowywana jest w
+            <strong>localStorage</strong>, dzięki czemu po odświeżeniu strony
+            lub ponownym uruchomieniu przeglądarki użytkownik nie traci swoich
+            ustawień.
+          </li>
+        </ul>
+        <h4 class="mt-4">Jak działa aplikacja?</h4>
+        <ol>
+          <li>
+            Po uruchomieniu aplikacji wyświetlana jest tabela z pogodą dla
+            domyślnych polskich miast. Jeśli użytkownik doda własne miasta, są
+            one zapisywane w localStorage i wyświetlane przy każdym kolejnym
+            wejściu.
+          </li>
+          <li>
+            Dodanie nowego miasta odbywa się przez kliknięcie przycisku
+            <i class="fa-solid fa-plus"></i>. Otwiera się modal z formularzem, w
+            którym należy wpisać nazwę miasta. Po zatwierdzeniu aplikacja
+            sprawdza, czy miasto istnieje w OpenWeatherMap – jeśli tak, dodaje
+            je do listy, jeśli nie – wyświetla komunikat o błędzie.
+          </li>
+          <li>
+            Usuwanie miasta jest możliwe przez kliknięcie ikony kosza przy
+            wybranym wierszu. Miasto natychmiast znika z listy i z localStorage.
+          </li>
+          <li>
+            Po kliknięciu na nazwę miasta użytkownik zostaje przeniesiony do
+            podstrony z rozbudowanymi szczegółami pogodowymi, pobieranymi na
+            bieżąco z API.
+          </li>
+        </ol>
+        <h4 class="mt-4">Technologie i architektura</h4>
+        <ul>
+          <li>
+            <strong>Angular</strong> – główny framework aplikacji, zapewniający
+            modularność, wydajność i łatwość rozbudowy.
+          </li>
+          <li>
+            <strong>Bootstrap 5</strong> – stylowanie i responsywność
+            interfejsu.
+          </li>
+          <li>
+            <strong>OpenWeatherMap API</strong> – źródło danych pogodowych.
+          </li>
+          <li>
+            <strong>localStorage</strong> – trwałe przechowywanie listy miast po
+            stronie przeglądarki.
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="text-muted small card-footer">
+      Autor: Kamil Krystowski &copy; 2025. Dane pogodowe: OpenWeatherMap.org
+    </div>
+  </div>
+</div>

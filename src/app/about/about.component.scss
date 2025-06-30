@@ -1,0 +1,31 @@
+.cities-container {
+    height: calc(100vh - 86px);
+
+    .table-responsive {
+        max-height: calc(100% - 90px);
+        overflow-y: auto;
+
+    }
+
+}
+
+.btn-control {
+    position: relative;
+    display: inline-block;
+    bottom: 9px;
+
+    button {
+        i {
+            color: rgb(103, 103, 103);
+        }
+    }
+}
+
+/* Ogólny kontener kart */
+.cards-view {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    
+}

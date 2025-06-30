@@ -1,0 +1,26 @@
+<div class="d-flex">
+  <div class="cities-container card m-md mt-2 w-100">
+    <h6 class="fs-5 text p-4 pb-0 card-title card-header bg-transparent">
+      Pogoda dla miast
+      <span class="btn-control float-end">
+        <button type="button" class="btn bg-transparent mx-1" (click)="openModal()">
+          <i class="fa-solid fa-plus fs-3"></i>
+        </button>
+      </span>
+    </h6>
+    <div class="table-responsive card-body">
+      <table
+        app-cities-table
+        class="table table-dark table-hover table-striped align-middle"
+        [cities]="cities"
+        (rowClicked)="goToDetails($event)"
+        (deleteCity)="onDeleteCity($event)"
+      ></table>
+    </div>
+    <app-form-modal
+      *ngIf="isModalOpen"
+      (save)="saveData($event)"
+      (close)="closeModal()"
+    ></app-form-modal>
+  </div>
+</div>

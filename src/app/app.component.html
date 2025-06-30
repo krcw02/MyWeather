@@ -1,0 +1,33 @@
+<!-- <app-navigation [isOpen]="isSidebarOpen"></app-navigation>
+<div class="app-container">
+  <app-navbar
+    (toggleSidebar)="toggleSidebar()"
+    [isSidebarOpen]="isSidebarOpen"
+  ></app-navbar>
+
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+</div> -->
+
+<div class="layout">
+  <!-- Navbar -->
+  <app-navbar
+    (toggleSidebar)="toggleSidebar()"
+    [isSidebarOpen]="isSidebarOpen"
+  ></app-navbar>
+
+  <!-- Główna sekcja (nawigacja + treść) -->
+  <div class="main">
+    <!-- Lewa nawigacja -->
+    <app-navigation
+      [isOpen]="isSidebarOpen"
+      (toggleSidebar)="toggleSidebar()"
+    ></app-navigation>
+
+    <!-- Główna treść -->
+    <div class="content cards-view" [ngClass]="{ collapsed: !isSidebarOpen }">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

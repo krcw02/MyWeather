@@ -1,0 +1,89 @@
+/* Główny układ */
+.layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+app-navbar {
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 1000px;
+    right: 0;
+
+}
+
+.main {
+    display: flex;
+    flex: 1;
+    margin-top: 60px;
+    overflow: hidden;
+    height: calc(100vh - 60px - 10px);
+
+    app-navigation {
+        flex: 0 0 260px;
+        background-color: #171718;
+        z-index: 1000;
+        position: fixed;
+        top: 0;
+        left: 0;
+        transition: width 0.3s ease-in-out;
+
+        &.collapsed {
+            flex: 0 0 110px;
+            width: 110px;
+        }
+    }
+
+    .content {
+        flex-grow: 1;
+        // margin-left: 270px;
+        // margin-top: 1px;
+        // margin-right: 20px;
+
+        margin-left: 250px;
+        margin-top: 1px;
+
+
+
+        transition: margin-left 0.3s ease-in-out, padding 0.3s ease-in-out;
+
+
+        // 🔻 do remove in final version
+
+        // padding: 1rem;
+
+        // 🔺 end of do remove in final version
+
+
+        color: #ffffff;
+        overflow-y: auto;
+        height: calc(100vh - 60px);
+
+
+
+
+        &.collapsed {
+            margin-left: 85px;
+
+        }
+
+    }
+
+    @media (max-width: 768px) {
+
+        .content {
+            margin-left: 10px;
+            margin-right: 10px;
+
+            &.collapsed {
+                margin-left: 10px;
+
+            }
+
+
+        }
+    }
+}

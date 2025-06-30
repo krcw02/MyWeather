@@ -1,0 +1,125 @@
+<div class="d-flex">
+  <div class="cities-container card m-md mt-2 w-100">
+    <h6 class="fs-5 text p-4 pb-0 card-title card-header bg-transparent mb-0">
+      Szczegóły miasta: {{ cityWeather?.name }}
+      <span class="btn-control float-end">
+        <button
+          type="button"
+          class="btn bg-transparent mx-1"
+          (click)="goBack()"
+        >
+          <i class="fa-solid fa-times fs-3"></i>
+        </button>
+      </span>
+    </h6>
+
+    <div class="table-responsive card-body">
+      <div *ngIf="cityWeather; else noData">
+        <div class="row g-4 align-items-center">
+          <div class="col-12 col-md-4 text-center">
+            <img
+              [src]="
+                'http://openweathermap.org/img/wn/' +
+                cityWeather.icon +
+                '@4x.png'
+              "
+              [alt]="cityWeather.description"
+              class="img-fluid mb-2"
+              style="max-width: 120px"
+            />
+          </div>
+          <div class="col-12 col-md-8">
+            <div class="row g-2">
+              <div class="col-6 col-sm-4">
+                <div class="card border-0 text-center h-100">
+                  <div class="card-body p-2">
+                    <div class="small text-muted">Temperatura</div>
+                    <div class="fs-3 fw-bold text-primary">
+                      {{ cityWeather.temp }}°C
+                    </div>
+                    <div class="small">
+                      Odczuwalna: {{ cityWeather.feels_like }}°C
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-sm-4">
+                <div class="card border-0 text-center h-100">
+                  <div class="card-body p-2">
+                    <div class="small text-muted">Wilgotność</div>
+                    <div class="fs-4 text-success">
+                      {{ cityWeather.humidity }}%
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-sm-4">
+                <div class="card border-0 text-center h-100">
+                  <div class="card-body p-2">
+                    <div class="small text-muted">Ciśnienie</div>
+                    <div class="fs-4 text-info">
+                      {{ cityWeather.pressure }} hPa
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-sm-4">
+                <div class="card border-0 text-center h-100">
+                  <div class="card-body p-2">
+                    <div class="small text-muted">Wiatr</div>
+                    <div class="fs-5 text-warning">
+                      {{ cityWeather.wind_speed }} m/s
+                    </div>
+                    <div class="small">
+                      Kierunek: {{ cityWeather.wind_deg }}°
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-sm-4">
+                <div class="card border-0 text-center h-100">
+                  <div class="card-body p-2">
+                    <div class="small text-muted">Zachmurzenie</div>
+                    <div class="fs-5 text-secondary">
+                      {{ cityWeather.clouds }}%
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-sm-4">
+                <div class="card border-0 text-center h-100">
+                  <div class="card-body p-2">
+                    <div class="small text-muted">Widoczność</div>
+                    <div class="fs-6 text-secondary">
+                      {{ cityWeather.visibility }} m
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr class="my-4" />
+        <div class="row text-center">
+          <div class="col-6">
+            <div class="small text-muted">Wschód słońca</div>
+            <div class="fw-bold">
+              {{ cityWeather!.sunrise * 1000 | date : "HH:mm" }}
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="small text-muted">Zachód słońca</div>
+            <div class="fw-bold">
+              {{ cityWeather.sunset * 1000 | date : "HH:mm" }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <ng-template #noData>
+        <div class="text-center text-secondary">
+          Brak szczegółowych danych pogodowych dla tego miasta.
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>
